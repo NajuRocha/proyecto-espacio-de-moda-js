@@ -162,7 +162,11 @@
                   />
                   <p>Vencimiento y codigo:</p>
                   <div id="tarjeta-credito">
-                    <select id="mes" data-checkout="cardExpirationMonth">
+                    <select
+                      id="mes"
+                      data-checkout="cardExpirationMonth"
+                      required
+                    >
                       <option value="">Mes</option>
                       <option value="1">01</option>
                       <option value="2">02</option>
@@ -177,7 +181,11 @@
                       <option value="11">11</option>
                       <option value="12">12</option>
                     </select>
-                    <select id="año" data-checkout="cardExpirationYear">
+                    <select
+                      id="año"
+                      data-checkout="cardExpirationYear"
+                      required
+                    >
                       <option value="">Año</option>
                       <option value="2021">2021</option>
                       <option value="2022">2022</option>

@@ -15,15 +15,11 @@ const carrito = [];
 //----------------Clase para cliente---------------
 
 class Cliente {
-  constructor(name, email, dni, tel, pedido, tar, mes, año, cod) {
+  constructor(name, email, dni, tel, pedido) {
     this.name = name;
     this.email = email;
     this.dni = dni;
     this.tel = tel;
-    this.tar = tar;
-    this.mes = mes;
-    this.año = año;
-    this.cod = cod;
     this.pedido = pedido;
   }
 }
@@ -67,6 +63,7 @@ function pushCursoCarrito(curso) {
       mostrarCarrito(curso);
       let $agregado = $(`#btn-${curso.id}`);
       $agregado.addClass("agregado");
+      $agregado.text("Agregado");
     } else {
       console.log("El curso ya fue seleccionado.");
     }
@@ -133,6 +130,7 @@ function eliminarCursoCarrito(curso) {
     // Remover clase del boton "Agregar"
     let $agregado = $(`#btn-${curso.id}`);
     $agregado.removeClass("agregado");
+    $agregado.text("Agregar");
 
     // Actualizar TOTAL llamando la funcion
     totalAPagar();
