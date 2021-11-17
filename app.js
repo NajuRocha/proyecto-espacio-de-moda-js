@@ -92,6 +92,9 @@ $(`#carrito-imagen`).click(() => {
   $("#lista-productos").toggle("fast");
 });
 
+if (carrito !== 0) {
+  $("#lista-productos").hide();
+}
 //------ Funcion que muestra los cursos seleccionados-----
 
 function mostrarCarrito(curso) {
@@ -151,31 +154,12 @@ function enviarDatosCliente() {
     let emailIngresado = document.getElementById("email").value;
     let dniIngresado = document.getElementById("dni").value;
     let telIngresado = document.getElementById("tel").value;
-    let tarIngresado = document.getElementById("tar").value;
-    let mesIngresado = document.getElementById("mes").value;
-    let añoIngresado = document.getElementById("año").value;
-    let codIngresado = document.getElementById("cod").value;
-
-    dniIngresado.addEventListener("keypress", (event) => {
-      console.log("evento keypress");
-      event.preventDefault();
-      let valorTecla = String.fromCharCode(event.keyCode);
-      console.log(valorTecla);
-      let valorParsed = parseInt(valorTecla);
-      if (valorParsed) {
-        dniIngresado.value = dniIngresado.value + valorParsed;
-      }
-    });
 
     const cliente1 = new Cliente(
       nombreIngresado,
       emailIngresado,
       dniIngresado,
       telIngresado,
-      tarIngresado,
-      mesIngresado,
-      añoIngresado,
-      codIngresado,
       carrito
     );
 
